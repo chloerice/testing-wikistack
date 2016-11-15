@@ -1,29 +1,43 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-describe('Page Model Tests', function () {
+describe('Page model', function () {
 
   describe('Virtuals', function () {
-    it('formats and populates urlTitle value based on title value', function () {
-      
+
+    describe('route', function () {
+      it('returns the url_name prepended by "/wiki/"');
+    });
+
+    describe('renderedContent', function () {
+      it('converts the markdown-formatted content into HTML');
+    });
+
+    describe('Hooks', function () {
+      it('it sets urlTitle based on title before validating');
+    });
+    
+  });
+
+  describe('Class methods', function () {
+    describe('findByTag', function () {
+      it('gets pages with the search tag');
+      it('does not get pages without the search tag');
     });
   });
 
-
-  it('gets page with properly formatted route', function () {
-
+  describe('Instance methods', function () {
+    describe('findSimilar', function () {
+      it('never gets itself');
+      it('gets other pages with any common tags');
+      it('does not get other pages without any common tags');
+    });
   });
 
-  it('gets and renders formatted page content', function () {
-
-  });
-
-  it('can find pages by tag', function () {
-
-  });
-
-  it('can find similar pages based on tags and id', function () {
-
+  describe('Validations', function () {
+    it('errors without title');
+    it('errors without content');
+    it('errors given an invalid status');
   });
 
 });
