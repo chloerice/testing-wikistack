@@ -5,6 +5,14 @@ const Page = models.Page;
 
 describe('Page model', function () {
 
+  beforeEach('Wipe and recreate tables', function (done) {
+    Page.sync({force: true})
+        .then(function () {
+          done();
+        })
+        .catch(done);
+  });
+
   describe('Virtuals', function () {
 
     beforeEach(function () {
@@ -42,7 +50,7 @@ describe('Page model', function () {
 
     describe('findByTag', function () {
       it('gets pages with the search tag', function () {
-        
+
         expect()
       });
 
