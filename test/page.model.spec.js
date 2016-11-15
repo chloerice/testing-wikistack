@@ -13,10 +13,6 @@ describe('Page model', function () {
       it('converts the markdown-formatted content into HTML');
     });
 
-    describe('Hooks', function () {
-      it('it sets urlTitle based on title before validating');
-    });
-    
   });
 
   describe('Class methods', function () {
@@ -32,6 +28,10 @@ describe('Page model', function () {
       it('gets other pages with any common tags');
       it('does not get other pages without any common tags');
     });
+  });
+
+  describe('Hooks', function () {
+    it('it sets urlTitle based on title before validating');
   });
 
   describe('Validations', function () {
